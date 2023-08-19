@@ -2793,3 +2793,6 @@ import re
 #
 #
 # print(re.sub(r"\s*(\w+)\s*", repl_find, text))
+
+
+print("У меня все получилось!!!")
