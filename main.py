@@ -2598,7 +2598,7 @@ reg = r'\s'
 # reg = r'[\[^\]]'
 # reg = r'[^0-9]'
 
-print(re.findall(reg, s))  # возвращает список, содержащий все совпадения
+# print(re.findall(reg, s))  # возвращает список, содержащий все совпадения
 # print(re.search(reg, s))  # возвращает первое совпадение с искомым шаблоном
 # print(re.search(reg, s).span())
 # print(re.search(reg, s).start())
@@ -2652,7 +2652,144 @@ print(re.findall(reg, s))  # возвращает список, содержащ
 
 # 15 августа
 
-print('Hello')
-print("good")
+# print('Hello')
+# print("good")
 
 
+import re
+
+# s = "05-03-1987 # Дата рождения"
+# print("Дата рождения:", re.sub('#.*', '', s))
+# print(re.sub('-', '.', s))
+# print("Дата рождения:", re.sub('-', '.', re.sub('#.*', '', s)))
+
+
+# a = '12 сентября 2023 года'
+# req = r'\d{2,4}'
+# print(re.findall(req, a))
+
+
+# a = '+7 499 456-45-78, +74994564578, 7 (499) 456 45 78, 74994564578'
+# req = r"\+?7\d{10}"
+# print(re.findall(req, a))
+
+
+# a = "Я ищу совпадения в 2023 году. И я их найд в два счета."
+# # reg = r'^\w+\s\w+'
+# req = r'\w+\.$'
+# print(re.findall(req, a))
+
+
+# def validate_login(name):
+#     return re.findall(r'^[A-Za-z_-]{3,16}$', name)
+#
+#
+# print(validate_login("Python_master"))
+# print(validate_login("#%$jlff"))
+
+
+# print(re.findall(r'\w+', '12 + й'))
+# print(re.findall(r'\w+', '12 + й', flags=re.ASCII))
+
+# text = "hello world"
+# print(re.findall(r"\w+", text, flags=re.DEBUG))
+
+
+# b = "Я ищу совпадения в 2023 году. И я их найд в 2 счета."
+# req = 'я'
+# print(re.findall(req, b, re.IGNORECASE))
+
+#
+# text = """
+# one
+# two
+# """
+# print(re.findall(r'one.\w+', text))
+# print(re.findall(r'one.\w+', text, flags=re.DOTALL))
+# print(re.findall('one$',text))
+# print(re.findall('one$',text, flags=re.MULTILINE))
+
+
+# # print(re.findall("""[a-z.-]+@[a-z.-]+""", 'test@mail.ru'))
+# print(re.findall("""
+# [a-z.-]+
+# @
+# [a-z.-]+
+# """, 'test@mail.ru', re.VERBOSE))
+
+# text = """Python,
+# python,
+# PYTHON"""
+# req = "(?im)^python"
+# print(re.findall(req, text))
+
+# text = "<body>Пример соответствия регулярных выражений</body>"
+# print(re.findall('<.*?>', text))
+
+# s = "<p>Изображение <img src='bg.jpg'> - фон страницы</p>"
+# # req = r'<img.*?>'
+# req = r'<img[^>]*>'
+# print(re.findall(req, s))
+
+
+# d = "Петр, Ольга и Виталий отлично учатся"
+# req = "Петр|Ольга|Виталий|Николай"
+# print(re.findall(req, d))
+
+# a = "int = 4, float = 4.0, double = 8.0f"
+# req = r"\w+\s*=\s*\d+[.\w+]*"
+# print(re.findall(req, a))
+
+# # a = '127.0.0.1'
+# a = '192.168.255.255'
+# # req = r'\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3}'
+#
+# print(re.findall(req, a))
+
+
+# a = "Word2016, PS6, AI5"
+# req = r'(([a-z]+)(\d+))'
+# print(re.findall(req, a, re.I))
+
+
+# a = "5 + 7*2 - 4"
+# req = r'\s*[+*-]\s*'
+# print(re.split(req, a))
+#
+# a1 = "5 + 7*2 - 4"
+# req1 = r'\s*([+*-])\s*'
+# print(re.split(req1, a1))
+
+
+# a = "28-08-2021"
+# # req = r'\d{2}-\d{2}-\d{4}'
+# req = r'(0[1-9]|[12][0-9]|3[01])-(\d{2})-(\d{4})'
+# print(re.findall(req, a))
+
+
+# b = "Я ищу совпадения в 2023 году. И я их найд в 2 счета."
+# req = r'(\d+)\s(\D+)'
+# print(re.search(req, b).group())
+# m = re.search(req, b)
+# print(m[1])
+# print(m[2])
+# print(m[0])
+
+#
+# text = """
+# Cамара
+# Лобня
+# Москва
+# Торжок
+# Уфа
+# """
+# count = 0
+#
+#
+# def repl_find(m):
+#     global count
+#     count += 1
+#     return f"<option value='{count}>{m.group(1)}</option>\n"
+#
+#
+# print(re.sub(r"\s*(\w+)\s*", repl_find, text))
